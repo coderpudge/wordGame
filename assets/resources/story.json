@@ -1,0 +1,162 @@
+{
+    "1":{
+        "id":"1",
+        "tittle":"场景1",
+        "content" : [
+            {"snapshot":"快照", "detail":"文字描述1"},
+            {"snapshot":"快照", "detail":"文字描述2"},
+            {"snapshot":"快照", "detail":"文字描述3"}
+        ],
+        "choose":[ 
+            { "button" : "竹林",  "jump":"跳转或 next"  },
+            { "button" : "瀑布",  "jump":"跳转或 next"  },
+            { "button" : "山丘",  "jump":"跳转或 next"  }
+        ],
+        "effect" : [
+            {
+                "attr":
+                [
+                    {"attrId" :"1",  "value": 10},
+                    {"attrId" :"2",  "value": -20},
+                    {"attrId" :"3",  "value": 60}
+                ]
+            },
+            {
+                "attr":
+                [
+                    {"attrId" :"1",  "value": 10},
+                    {"attrId" :"2",  "value": -20},
+                    {"attrId" :"3",  "value": 60}
+                ]
+            },
+            {
+                "attr":
+                [
+                    {"attrId" :"1",  "value": 10},
+                    {"attrId" :"2",  "value": -20},
+                    {"attrId" :"3",  "value": 60}
+                ]
+            }
+        ]
+    },
+    "2":{
+        "id":"1",
+        "tittle":"场景2",
+        "content" : [
+            {"snapshot":"快照", "detail":"文字描述1"},
+            {"snapshot":"快照", "detail":"文字描述2"},
+            {"snapshot":"快照", "detail":"文字描述3"}
+        ],
+        "choose":[ 
+            { "button" : "竹林",  "jump":"跳转或 next"  },
+            { "button" : "瀑布",  "jump":"跳转或 next"  },
+            { "button" : "山丘",  "jump":"跳转或 next"  }
+        ],
+        "effect" : [
+            {
+                "attr":
+                [
+                    {"attrId" :"1",  "value": 10},
+                    {"attrId" :"2",  "value": -20},
+                    {"attrId" :"3",  "value": 60}
+                ]
+            },
+            {
+                "attr":
+                [
+                    {"attrId" :"1",  "value": 10},
+                    {"attrId" :"2",  "value": -20},
+                    {"attrId" :"3",  "value": 60}
+                ]
+            },
+            {
+                "attr":
+                [
+                    {"attrId" :"1",  "value": 10},
+                    {"attrId" :"2",  "value": -20},
+                    {"attrId" :"3",  "value": 60}
+                ]
+            }
+        ]
+    },
+    "3":{
+        "id":"1",
+        "tittle":"场景3",
+        "content" : [
+            {"snapshot":"快照", "detail":"文字描述1"},
+            {"snapshot":"快照", "detail":"文字描述2"},
+            {"snapshot":"快照", "detail":"文字描述3"}
+        ],
+        "choose":[ 
+            { "button" : "竹林",  "jump":"跳转或 next"  },
+            { "button" : "瀑布",  "jump":"跳转或 next"  },
+            { "button" : "山丘",  "jump":"跳转或 next"  }
+        ],
+        "effect" : [
+            {
+                "attr":
+                [
+                    {"attrId" :"1",  "value": 10},
+                    {"attrId" :"2",  "value": -20},
+                    {"attrId" :"3",  "value": 60}
+                ]
+            },
+            {
+                "attr":
+                [
+                    {"attrId" :"1",  "value": 10},
+                    {"attrId" :"2",  "value": -20},
+                    {"attrId" :"3",  "value": 60}
+                ]
+            },
+            {
+                "attr":
+                [
+                    {"attrId" :"1",  "value": 10},
+                    {"attrId" :"2",  "value": -20},
+                    {"attrId" :"3",  "value": 60}
+                ]
+            }
+        ]
+    },
+    "4":{
+        "id":"1",
+        "tittle":"场景4",
+        "content" : [
+            {"snapshot":"快照", "detail":"文字描述1"},
+            {"snapshot":"快照", "detail":"文字描述2"},
+            {"snapshot":"快照", "detail":"文字描述3"}
+        ],
+        "choose":[ 
+            { "button" : "竹林",  "jump":"跳转或 next"  },
+            { "button" : "瀑布",  "jump":"跳转或 next"  },
+            { "button" : "山丘",  "jump":"跳转或 next"  }
+        ],
+        "effect" : [
+            {
+                "attr":
+                [
+                    {"attrId" :"1",  "value": 10},
+                    {"attrId" :"2",  "value": -20},
+                    {"attrId" :"3",  "value": 60}
+                ]
+            },
+            {
+                "attr":
+                [
+                    {"attrId" :"1",  "value": 10},
+                    {"attrId" :"2",  "value": -20},
+                    {"attrId" :"3",  "value": 60}
+                ]
+            },
+            {
+                "attr":
+                [
+                    {"attrId" :"1",  "value": 10},
+                    {"attrId" :"2",  "value": -20},
+                    {"attrId" :"3",  "value": 60}
+                ]
+            }
+        ]
+    }
+}
