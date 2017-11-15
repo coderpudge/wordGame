@@ -29,7 +29,9 @@ export default class NewClass extends cc.Component {
         cc.log("button"+this.id)
     }
     onclick(data){
-        cc.log("onclick",this.id)
-        // this.node.dispatchEvent( new cc.Event.EventCustom('storyChoose', true) );
+        cc.log("onclick",this.id,data)
+        let event = new cc.Event.EventCustom('storyChoose', true);
+        event.setUserData({"id":this.id});
+        this.node.dispatchEvent( event );
     }
 }
