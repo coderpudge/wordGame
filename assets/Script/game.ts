@@ -151,7 +151,7 @@ export default class NewClass extends cc.Component {
         }
         
         for (let i = 0; i < this.attrs.length; i++) {
-            this.attrs[i].string = this.userData.role["attr"+(i+1)];
+            this.attrs[i].string = "attr"+i+":"+this.userData.role["attr"+(i+1)];
             
         }
     }
