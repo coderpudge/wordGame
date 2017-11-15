@@ -28,6 +28,13 @@ export default class NewClass extends cc.Component {
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
+        // this.node.on('storyChoose', function (event) {
+        //     console.log(event.detail.msg);
+        //   });
+        this.node.on('storyChoose', function (event) {
+            cc.log("onevent:",event);
+            event.stopPropagation();
+        })
         this.labelTime.string="第1天0时1分"
         this.schedule(this.timeUpdate,1)
         this.loadStory();
@@ -67,12 +74,29 @@ export default class NewClass extends cc.Component {
                     var newMyPrefab = cc.instantiate( results );
                     
                     var newMyPrefabScript = newMyPrefab.getComponent( 'storyItem' );
-                    // if (self.curStoryId == 0) {
-                    //    self.curStoryId = self.storyData  
-                    // }
+                    
+
                     var itemData = self.storyData[self.curStoryId];
-                    newMyPrefabScript.init(itemData.tittle,itemData.content,itemData.choose);
+                    var tmp ="";
+                    for (let i = 0; i < itemData.content.length; i++) {
+                        tmp += itemData.content[i].detail + "\t\n"; 
+                    }
+
+                    let tittleLineHeight = 100;
+                    let wordLen = tmp.length;
+                    cc.log(self.content.width , newMyPrefabScript.content.node.width)
+                    let contentLineWordCount =Math.ceil(newMyPrefabScript.content.maxWidth / newMyPrefabScript.content.fontSize); //(每行文字个数)
+                    let contentLineHeight = newMyPrefabScript.content.lineHeight; //每行字体高度
+                    let contentLineLen = Math.ceil(wordLen / contentLineWordCount) + itemData.content.length-1;
+                    let btnLineHeigh = newMyPrefabScript.btnNode.height;
+                    let scrollHeight = tittleLineHeight + contentLineLen*contentLineHeight + btnLineHeigh;
+                    cc.log("lineheight:",contentLineHeight,"contentLineWordCount:",contentLineWordCount,"content linelen:",contentLineLen,"scroll:",scrollHeight);
+                    let btnPosY = tittleLineHeight + contentLineLen*contentLineHeight;
+                    self.content.setContentSize(self.content.getContentSize().width, scrollHeight);
+                    newMyPrefabScript.init(itemData.tittle,itemData.content,itemData.choose,btnPosY);
                     self.content.addChild(newMyPrefab);
+                    var btnNodePos = newMyPrefabScript.btnNode.getPosition();
+                    newMyPrefabScript.btnNode.y = -btnPosY;
                 })
             }
            

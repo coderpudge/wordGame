@@ -24,7 +24,7 @@ export default class NewClass extends cc.Component {
     // }
 
     // update (dt) {}
-    init(tittle,content,chooses){
+    init(tittle,content,chooses,btnPosY){
         this.tittle.string = tittle;
         var tmp ="";
         for (let i = 0; i < content.length; i++) {
@@ -32,14 +32,37 @@ export default class NewClass extends cc.Component {
             
         }
         this.content.string = tmp;
+        let wordLen = tmp.length;
+        let heighLen = wordLen / 10+1;
+        let lineHeight = 50;
+        // this.scrollview_gonggao.setInnerContainerSize(cc.size(this.scrollview_gonggao.getContentSize().width,(wordLen / 10+1)*lineHeight));
+        
+        // this.content.setContentSize(this.scrollview_gonggao.getContentSize());
+        // this.label_gonggao.setPosition(this.scrollview_gonggao.getContentSize().width/2,this.scrollview_gonggao.getContentSize().height);
+
+        var self = this;
+        cc.loader.loadRes("prefab/storyChooseBtn",function(error,results){
+            if( error ) { cc.log( '載入Prefab失敗, 原因:' + error ); return; }
+            if( !( results instanceof cc.Prefab ) ) { cc.log( '你載入的不是Prefab, 你做了什麼事?' ); return; } //這個是型別的檢查
+            
+            for (var i = 0; i < chooses.length; i++) {
+                var newMyPrefab = cc.instantiate( results );
+                var newMyPrefabScript = newMyPrefab.getComponent('storyChooseBtn');
+                
+                newMyPrefabScript.init(chooses[i].button,i);
+                newMyPrefab.setPosition(i*100+200, 0);
+                self.btnNode.addChild(newMyPrefab);
+            }
+            
+        })
 
         let chooseLen = chooses.length;
         for (let i = 0; i < chooses.length; i++) {
-            var node = new cc.Node('btn'+i);
-            let btn = node.addComponent(cc.Button);
-            // btn.
-            btn.node.setPosition(i*100,0)
-            node.parent = this.btnNode;
+            // var node = new cc.Node('btn'+i);
+            // let btn = node.addComponent(cc.Button);
+            // // btn.
+            // btn.node.setPosition(i*100,0)
+            // node.parent = this.btnNode;
             // var btn = new cc.Button();
             // this.btnNode.addChild(btn);
             // btn.setPosition(i*100,0);
@@ -52,6 +75,7 @@ export default class NewClass extends cc.Component {
     
             // var button = node.getComponent(cc.Button);
             // button.clickEvents.push(clickEventHandler);
+            
         }
     
        
